@@ -43,15 +43,9 @@
     </div>
 </div>
 <style>
-    .formulario {
-        display: flex;
-        flex-direction: column;
-        background-color: white;
-        margin-top: 10px;
-        border-radius: 25px;
-    }
+    
 </style>
-<form class="container formulario" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="POST" enctype="multipart/form-data">
+<form class="container formulario" action="subir-convocatoria.php" method="POST" enctype="multipart/form-data">
     <div class="container">
         <span class="BoldText"> Sube tu Convocatoria!</span>
     </div>
@@ -96,7 +90,9 @@
 
         <div class="div container">
             <div class="container">
-                <input type="file" class="dropzone" name="pdf" id="pdf" style="width: 600px; height: 200px; margin: 10px; border-radius: 25px; color: #282638;">
+                <input type="file"  name="pdf" id="pdf" 
+                enctype="multipart/form-data"
+                style="width: 600px; height: 200px; margin: 10px; border-radius: 25px; color: #282638;">
                 <div class="container" style="width: 100%; justify-items: flex;  margin-top: 10px;">
                     <button action="index-adm.php">Atras</button>
                     <button style="margin-left: 10px;" action="subir-convocatoria.php" enctype="multipart/form-data" name="submit">Guardar</button>

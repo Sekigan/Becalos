@@ -13,7 +13,7 @@
 </head>
 <body>
     
-<div class="container-form2">
+<div class="container">
         <div class="header">
             <div class="logo-title1">
                 <img src="image/logo_magtimus.png">

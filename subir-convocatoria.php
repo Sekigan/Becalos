@@ -23,8 +23,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $archivosNecesarios = $_POST['archivosNecesarios'];
             $name       = base64_encode(file_get_contents(addslashes($_FILES['pdf']['tmp_name'])));
             
-            if ($nombreConvo != NULL && $requisitos != NULL && $archivosNecesarios != NULL) {
-                  $statement = $conexion->prepare('INSERT INTO `convocatorias`(`idConvocatoria`, `numeroControlA`, `nombreConvocatoria`, `convocatoriaPDF`, `archivosNecesariosDesc`, `requisitosDescripcion`) VALUES (NULL, :usuarioA, :nombreConvoca, :pdf,:archivosNece, :requisitos');
+            
+            
+                  $statement = $conexion->prepare('INSERT INTO `convocatorias`(`idConvocatoria`, `numeroControlA`, `nombreConvocatoria`, `convocatoriaPDF`, `archivosNecesariosDesc`, `requisitosDescripcion`) 
+                                                      VALUES (NULL, :usuarioA, :nombreConvoca, :pdf,:archivosNece, :requisitos');
                   $statement->bindParam(':usuarioA', $admin);
                   $statement->bindParam(':nombreConvoca', $nombreConvo);
                   $statement->bindParam(':pdf', $name, PDO::PARAM_LOB);
@@ -32,14 +34,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                   $statement->bindParam(':requisitos', $requisitos);
 
                   $resultado = $statement->fetch();
-                  if ($resultado === true) {
+                  
+                  if ($resultado == 1) {
                         $error .= '<i style="color: green;">Su Correo Electronico se ha Actualizado Exitosamente</i>';
                   } else {
                         $error .= '<i style="color: red;">verifique los datos</i>';
                   }
-            } else {
-                  $error .= '<i style="color: red;">verifique los datos</i>';
-            }
+            
       } catch (PDOException $e) {
             die('ERROR: ' . $e->getMessage() . "\n");
             exit($e);

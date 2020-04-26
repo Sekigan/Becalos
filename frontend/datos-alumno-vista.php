@@ -141,11 +141,7 @@ $conex = mysqli_connect('localhost', 'root', '','becas');
                 
 
             
-             
-            <div class="user line-input1">
-            <span class="lnr lnr-graduation-hat"></span>
-               <input type="text" placeholder=<?php echo $carrera; ?>  name= "carrera"  readonly>
-            </div>
+            
 
             <!-- iconos --> 
             <!-- iconos en https://linearicons.com/free -->
