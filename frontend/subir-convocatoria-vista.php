@@ -43,7 +43,7 @@
     </div>
 </div>
 <style>
-    
+
 </style>
 <form class="container formulario" action="subir-convocatoria.php" method="POST" enctype="multipart/form-data">
     <div class="container">
@@ -68,7 +68,7 @@
                 <div class="container manutencion" style="width: 200px; height: 250px;text-align: center;">
 
                     <div class="column manutencion">
-                        <input type="text" name="nombreConvo"  id="nombreConvo" class="nombreConvo" placeholder="Convocatoria">
+                        <input type="text" name="nombreConvo" id="nombreConvo" class="nombreConvo" placeholder="Convocatoria">
                     </div>
 
                 </div>
@@ -88,20 +88,20 @@
 
         </div>
 
-        <div class="div container">
-            <div class="container">
-                <input type="file"  name="pdf" id="pdf" 
-                enctype="multipart/form-data"
-                style="width: 600px; height: 200px; margin: 10px; border-radius: 25px; color: #282638;">
-                <div class="container" style="width: 100%; justify-items: flex;  margin-top: 10px;">
-                    <button action="index-adm.php">Atras</button>
-                    <button style="margin-left: 10px;" action="subir-convocatoria.php" enctype="multipart/form-data" name="submit">Guardar</button>
-                </form>
-                <?php if(!empty($error)): ?>
-            <div class="mensaje">
-                <?php echo $error; ?>
-            </div>
-            <?php endif; ?>
+
+
+        <input type="file" name="pdf" id="pdf" enctype="multipart/form-data" style="width: 600px; height: 200px; margin: 10px; border-radius: 25px; color: #282638;">
+        <div class="container" style="width: 100%; justify-items: flex;  margin-top: 10px;">
+            <button action="index-adm.php">Atras</button>
+            <a href="subir-convocatroa.php">
+                <button style="margin-left: 10px;">Guardar</button>
+</form> </a>
+<?php if (!empty($error)) : ?>
+    <div class="mensaje">
+        <?php echo $error; ?>
+    </div>
+<?php endif;
+?>
 </div>
 
 </div>
