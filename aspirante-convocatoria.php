@@ -7,46 +7,24 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     require_once 'frontend/aspirante-convocatoria-vista.php';
 
     $id = $_POST['id'];
-
-
-
-
-
-
-
-
     $requisitos = [];
     $archivosNece = [];
-
-
-
-
-
-
-
-
-
     $sql = $conexion->prepare("SELECT `idConvocatoria`, `numeroControlA`, `nombreConvocatoria`, `convocatoriaPDF`, `archivosNecesariosDesc`, `requisitosDescripcion` FROM `convocatorias` WHERE `idConvocatoria`= :id");
     $sql->execute(array(
         ':id' => $id
     ));
-
-
-
-
 
     foreach ($sql as $row) {
 
 
         $idConvoca = $row['idConvocatoria'];
         $numeroControlA = $row['numeroControlA'];
-
-
         $nombreConvoca = $row["nombreConvocatoria"];
         $requisitos = $row['requisitosDescripcion'];
         $pdf = $row['convocatoriaPDF'];
         $archivosNece = $row['archivosNecesariosDesc'];
-    };
+    }
+
     $pdffile = base64_decode($pdf);
     echo '<body class="body container">';
     echo "<form class='container formulario' style='display: flex; flex-direction: column; background-color: white; margin-top: 20px;>";
@@ -75,7 +53,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     echo '<div class="column manutencion">';
     echo '<a href=';
-    echo $pdffile;
+    $pdffile;
     echo '>';
     echo '<small class="lnr lnr-download btn ">Descargar pdf</small></a>';
     echo '</div>
@@ -112,8 +90,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 <div class="container" style="width: 100%; justify-items: flex;  margin-top: 10px;">
     <button>Atras</button>
-    <a href="principal.php">
-    <button style="margin-left: 10px;">Guardar</button>
+    <a href="aspirante-convocatoria.php">
+    <button method:"guardar" style="margin-left: 10px;">Guardar</button>
     </a>
 </div>
 
@@ -126,5 +104,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 <script src="js/script.js"></script>
 
 ';
-    echo var_dump($pdffile);
+    
 }
+
+
