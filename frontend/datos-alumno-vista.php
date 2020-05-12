@@ -51,7 +51,7 @@ $conex = mysqli_connect('localhost', 'root', '','becas');
                 <h2>Datos del Alumno</h2>
             </div>
             <div class="menu">
-                <a href="datos-alumno.php"><li class="module-Dalumnos">Datos del Alumno</li></a>
+                <a href="principal.php"><li class="module-Atras">Atras</li></a>
                 <a href="convocatorias.php"><li class="module-convocatorias">Covocatorias</li></a>
                 <a href="cerrar.php"><li class="module-convocatorias">Cerrar sesion</li></a>
             </div>

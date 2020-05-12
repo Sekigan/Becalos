@@ -34,7 +34,7 @@
         <a href="principal-adm.php">
             <li class="module-convocatorias">Atras</li>
         </a>
-        <a href="gestionar-convocatoria.php">
+        <a href="./controlador.php?gui=convocatoria">
             <li class="module-modificar">Gestionar Convocatoria</li>
         </a>
         <a href="cerrar.php">

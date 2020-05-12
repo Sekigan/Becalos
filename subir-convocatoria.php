@@ -1,7 +1,7 @@
 
 
 <?php
-require_once('modelo/convocatorias.php');
+require_once('modelo/Convocatoria.php');
 
 
 session_start();
@@ -18,8 +18,8 @@ if (isset($_SESSION['usuarioA'])) {
             $entidadConvocatoria->nombreConvocatoria = $_POST["nombreConvo"];
             $entidadConvocatoria->requisitos = $_POST["requisitos"];
             $entidadConvocatoria->archivosNecesarios = $_POST["archivosNecesarios"];
-            # $entidadConvocatoria->convocatoriaPDF = base64_encode(file_get_contents($_FILES["pdf"]["tmp_name"]));
-            echo var_dump($entidadConvocatoria);
+            $entidadConvocatoria->convocatoriaPDF = base64_encode(file_get_contents($_FILES["pdf"]["tmp_name"]));
+
             $entidadConvocatoria->Registrar($entidadConvocatoria);
       }
       /*

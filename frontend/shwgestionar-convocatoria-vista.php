@@ -9,18 +9,22 @@
 
     <script src="https://rawgit.com/enyo/dropzone/master/dist/dropzone.js"></script>
     <link rel="stylesheet" href="https://rawgit.com/enyo/dropzone/master/dist/dropzone.css">
+    <link rel="stylesheet" href="tabla.css">
     <link rel="stylesheet" type="text/css" href="style.css">
     <!-- iconos -->
     <link rel="stylesheet" href="https://cdn.linearicons.com/free/1.0.0/icon-font.min.css">
     <!-- iconos -->
     <link rel="stylesheet" href="icon/style.css">
     <link rel="stylesheet" href="css/style.css">
-
+</head>
+<div class="container-form2">
     <div class="header">
+
         <div class="logo-title1">
             <img src="image/logo_magtimus.png">
             <h2>Gestionar Convocatoria</h2>
         </div>
+
         <div class="menu">
             <a href="principal-adm.php">
                 <li class="module-convocatorias">Atras</li>
@@ -33,22 +37,23 @@
             </a>
         </div>
     </div>
+</div>
 
-    <?php require_once 'repo.php'; ?>
+<?php require_once 'repo.php'; ?>
 
-</head>
+
 <div class="container-form4">
     <table class="table  table-striped  table-hover" id="tabla" border="0">
         <thead>
             <tr>
-                <th style="width:20%; background-color: #5DACCD; color:#fff; text-align:center;">Convocatoria</th>
-                <th style="width:74%; background-color: #5DACCD; color:#fff"></th>
-                <th style="width:8%; background-color: #5DACCD; color:#fff"></th>
-                <th style="width:8%; background-color: #5DACCD; color:#fff"></th>
+                <th style="width:20%; text-align:center;">Convocatoria</th>
+                <th style="width:74%;"></th>
+                <th></th>
+                <th></th>
             </tr>
         </thead>
         <tbody>
-            <?php foreach ($entidadConvocatoria->Listar() as $r) : ?>
+            <?php foreach ($this->modelo->Listar() as $r) : ?>
                 <tr>
                     <td><?php echo $r->nombreConvocatoria; ?></td>
                     <td></td>

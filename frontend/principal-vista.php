@@ -2,65 +2,47 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Sesion iniciada</title>
+    <title>Principal Alumno</title>
     
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    
-    <link rel="stylesheet" href="css/style.css">
-    
-    <style>
-        
-        body{
-            background-image: url(image/bg1.jpg);
-        }
-        
-        .welcome{
-            width: 100%;
-            max-width: 600px;
-            margin: auto;
-            margin-top: 100px;
-            background: rgba(0,0,0,0.6);
-            text-align: center;
-            padding: 20px;
-        }
-        
-        .welcome img{
-            width: 120px;
-            height: 120px;
-            text-align: center;
-        }
+   
 
-        .welcome h1{
-            font-size: 50px;
-            color: white;
-            font-weight: 100;
-            margin-top: 20px;
-        }
-        
-        .welcome a{
-            display: block;
-            margin-top: 40px;
-            font-size: 20px;
-            padding: 10px;
-            border: 1px solid white;
-        }
-        
-        .welcome a:hover{
-            color: black;
-            background: white;
-        }
-        
-    
-    </style>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <!-- iconos -->
+    <link rel="stylesheet" href="https://cdn.linearicons.com/free/1.0.0/icon-font.min.css">
+    <!-- iconos -->
+    <link rel="stylesheet" href="icon/style.css">
+    <link rel="stylesheet" href="css/style.css">
     
 </head>
 <body>
-   
-   <div class="welcome">
-       <img src="image/logo_magtimus.png" >
-        <h1>Bienvenido, has logrado iniciar sesion</h1>
-        <a href="cerrar.php">Cerrar sesion</a>
-   </div>
-   
+    <div class="container">
+        <div class="header">
+            <div class="logo-title1">
+                <img src="image/logo_magtimus.png">
+                <h2>Inicio Alumno</h2>
+            </div>
+            <div class="menu">
+                <a href="datos-alumno.php"><li class="module-Dalumnos">Datos del Alumno</li></a>
+                <a href="convocatorias.php"><li class="module-convocatorias">Covocatorias</li></a>
+                <a href="cerrar.php"><li class="module-convocatorias">Cerrar sesion</li></a>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="container-form4">
+        
+        <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post" class="form">
+            <div class="welcome-form"><h1>Bienvenido a </h1><h2>Becas ITS</h2></div>
+            <div class="welcome-form"><h1>Ha iniciado sesion como </h1><h2>Alumno</h2></div>
+        </form>
+
+    </div>
+    
+            
+    <script src="js/jquery.js"></script>
+    <script src="js/script.js"></script>
+
 </body>
 </html>

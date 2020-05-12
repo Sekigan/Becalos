@@ -24,71 +24,14 @@
                 <h2>Solicitud Asesoria</h2>
             </div>
             <div class="menu">
-                <a href="aspirante-convocatoria.php"><li class="module-convocatorias">Atras</li></a>
+                <a href="convocatorias.php"><li class="module-convocatorias">Atras</li></a>
                 <a href="cerrar.php"><li class="module-convocatorias">Cerrar sesion</li></a>
             </div>
         </div>
 
     </div>
 
-    <div class="container-form3">
-    
-        <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post" class="form1">
-            
-            <div class="user line-input1">
-            <span class="lnr lnr-user"></span>
-               <input type="text" placeholder="Nombre" name= "nombre"  readonly>
-             </div>  
-
-            <div class="user line-input1">
-            <span class="lnr lnr-user"></span>
-               <input type="text" placeholder="Apellido Paterno" name= "apellidoP"  readonly>
-             </div> 
-                  
-            <div class="user line-input1">
-            <span class="lnr lnr-user"></span>
-               <input type="text" placeholder="Apellido Materno" name= "apellidoM"  readonly>
-            </div> 
-            
-            <div class="user line-input1">
-            <span class="lnr lnr-graduation-hat"></span>
-               <input type="text" placeholder="Numero de Control" name= "usuario"  readonly>
-            </div> 
-            
-            <div class="user line-input1">
-            <span class="lnr lnr-graduation-hat"></span>
-               <input type="text" placeholder="Semestre" name= "semestre"  readonly>
-            </div> 
-
-            <div class="user line-input1">
-            <span class="lnr lnr-graduation-hat"></span>
-               <input type="text" placeholder="Carrera" name= "carrera"  readonly>
-            </div>
-
-            <!-- iconos --> 
-            <!-- iconos en https://linearicons.com/free -->
-             <div class="user line-input1">
-                <span class="lnr lnr-envelope"></span> 
-                        <!-- lnr lnr-"nombre del icono">-->
-                <input type="text" placeholder="Correo Electronico" name="mail">
-             </div>
-            
-             <div class="user line-input1">
-               <span class="lnr lnr-phone-handset"></span>
-               <input type="text" placeholder="Número Telefónico" name="tel">
-             </div>
-
-
-            <?php if(!empty($error)): ?>
-            <div class="mensaje">
-                <?php echo $error; ?>
-            </div>
-            <?php endif; ?>
-            
-            <button type="submit">Guardar<label class="lnr lnr-chevron-right"></label></button>
-        </form>
-    </div>
-    
+       
     <script src="js/jquery.js"></script>
     <script src="js/script.js"></script>
 

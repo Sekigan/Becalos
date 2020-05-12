@@ -23,11 +23,11 @@
                 <h2> Convocatorias </h2>
             </div>
             <div class="menu">
-                <a href="datos-alumno.php">
-                    <li class="module-Dalumnos">Datos del Alumno</li>
+                <a href="principal.php">    
+                    <li class="module-Atras">Atras</li></a>
                 </a>
                 <a href="convocatorias.php">
-                    <li class="module-convocatorias">Convocatorias</li>
+                    <li class="module-convocatorias">Covocatorias</li>
                 </a>
                 <a href="cerrar.php">
                     <li class="module-convocatorias">Cerrar sesion</li>

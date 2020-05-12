@@ -1,27 +1,5 @@
-<?php session_start();
-require_once 'modelo/convocatorias.php';
-$entidadConvocatoria = new Convocatorias();
-
-require_once 'frontend/shwgestionar-convocatoria-vista.php';
-
-
-
-
-$_SESSION['errMsg'] = 0;
-
-require_once('modelo/Database.php');
-
-$controlador = new ControladorConvocatoria();
-
-// logica del controlador
-
-// Obtenemos el controlador que queremos cargar
-$controlador  = new ControladorConvocatoria();
-$accion       = isset($_REQUEST['a']) ? $_REQUEST['a'] : 'Index';
-
-call_user_func(array($controlador, $accion));
-
-
+<?php
+require_once('./modelo/Convocatoria.php');
 
 
 
@@ -38,7 +16,8 @@ class ControladorConvocatoria
 
       public function Index()
       {
-            // require_once 'frontend/principal-vista-adm.php';
+            require_once 'repo.php';
+            require_once './frontend/shwgestionar-convocatoria-vista.php';
       }
 
       public function Crud()
@@ -48,9 +27,8 @@ class ControladorConvocatoria
             if (isset($_REQUEST['id'])) {
                   $entidadConvocatoria = $this->modelo->Obtener($_REQUEST['id']);
             }
-
-
-            require_once 'frontend/updConvocatorias.php';
+            require_once 'repo.php';
+            require_once './frontend/updConvocatoriasVista.php';
       }
 
       public function Guardar()
@@ -62,17 +40,18 @@ class ControladorConvocatoria
             $entidadConvocatoria->nombreConvocatoria = $_REQUEST['txtNombre'];
             $entidadConvocatoria->requisitos = $_REQUEST["txtRequisitos"];
             $entidadConvocatoria->archivosNecesarios = $_REQUEST["txtArchivosN"];
+            $entidadConvocatoria->convocatoriaPDF = base64_encode(file_get_contents($_FILES["pdf"]["tmp_name"]));
 
             if ($entidadConvocatoria->idConvocatoria > 0) {
                   $this->modelo->Actualizar($entidadConvocatoria);
-                  //header('Location: ./controlador.php?gui=estatus');
+                  header('Location: ./controlador.php?gui=convocatoria');
             } else {
                   $this->modelo->Registrar($entidadConvocatoria);
                   if ($_SESSION['errMsg'] == 0) {
                         $this->Crud();
                   } else {
-                        // require_once './vista/headerHTML.php';
-                        require_once 'gestionar-convocatoria.php';
+                        require_once 'repo.php';
+                        require_once './frontend/updConvocatoriasVista.php';
                   }
             }
       }
@@ -80,6 +59,6 @@ class ControladorConvocatoria
       public function Eliminar()
       {
             $this->modelo->Eliminar($_REQUEST['id']);
-            require_once 'gestionar-convocatoria.php';
+            header('Location: ./controlador.php?gui=convocatoria');
       }
 }

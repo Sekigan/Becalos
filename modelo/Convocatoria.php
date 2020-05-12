@@ -93,7 +93,7 @@ class Convocatorias
 
         try {
 
-            $sql = "INSERT INTO convocatorias(idConvocatoria, numeroControlA, nombreConvocatoria, convocatoriaPDF,archivosNecesariosDesc, requisitosDescripcion) VALUES (' ', ?, ?,NULL,?,?)";
+            $sql = "INSERT INTO convocatorias( numeroControlA, nombreConvocatoria, convocatoriaPDF,archivosNecesariosDesc, requisitosDescripcion) VALUES ( ?, ?,?,?,?)";
 
             $this->pdo->prepare($sql);
 
@@ -103,6 +103,7 @@ class Convocatorias
                 array(
                     $data->numeroControlA,
                     $data->nombreConvocatoria,
+                    $data->convocatoriaPDF,
                     $data->archivosNecesarios,
                     $data->requisitos
                 )

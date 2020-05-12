@@ -30,7 +30,7 @@
         
         if ($resultado !== false){
             $_SESSION['usuario'] = $usuario;
-            header('location: datos-alumno.php');
+            header('location: principal.php');
         }else{
             $error .= '<i> Verifique su Usuario y/o Contraseña </i>';
         }

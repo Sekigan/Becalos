@@ -29,7 +29,7 @@
                 echo "Error: " . $prueba_error->getMessage();
             }
 
-            $statement = $conexion->prepare('SELECT * FROM alumno WHERE numeroControl = :usuario LIMIT 1');
+            $statement = $conexion->prepare('SELECT * FROM alumnos WHERE numeroControl = :usuario LIMIT 1');
             $statement->execute(array(
                 ':usuario' => $usuario
             
@@ -43,7 +43,7 @@
 
         /*para verificar contrasena */
 
-        $statementC = $conexion->prepare('SELECT * FROM alumno WHERE contrasena = :clave ');
+        $statementC = $conexion->prepare('SELECT * FROM alumnos WHERE contrasena = :clave ');
             $statementC->execute(array(
                 ':clave' => $clave
             
@@ -68,7 +68,7 @@
 
         
         if ($error == ''){
-            $statement = $conexion->prepare('UPDATE alumno SET contrasena = :claveN WHERE  numeroControl = :usuario');
+            $statement = $conexion->prepare('UPDATE alumnos SET contrasena = :claveN WHERE  numeroControl = :usuario');
             $statement->execute(array(
                 ':usuario' => $usuario,
                 ':claveN' => $claveN

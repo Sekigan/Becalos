@@ -31,7 +31,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
             echo "Error: " . $prueba_error->getMessage();
         }
 
-        $statement = $conexion->prepare('SELECT * FROM administrador WHERE numeroControlA = :usuarioA LIMIT 1');
+        $statement = $conexion->prepare('SELECT * FROM administradores WHERE numeroControlA = :usuarioA LIMIT 1');
         $statement->execute(array(
             ':usuarioA' => $usuario
         
@@ -46,7 +46,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
 
     /*para verificar contrasena */
 
-    $statementC = $conexion->prepare('SELECT * FROM administrador WHERE contrasena = :clave ');
+    $statementC = $conexion->prepare('SELECT * FROM administradores WHERE contrasena = :clave ');
     $statementC->execute(array(
         ':clave' => $clave
     
@@ -71,7 +71,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
 
     
     if ($error == ''){
-        $statement = $conexion->prepare('UPDATE administrador SET contrasena = :claveN WHERE  numeroControlA = :usuarioA');
+        $statement = $conexion->prepare('UPDATE administradores SET contrasena = :claveN WHERE  numeroControlA = :usuarioA');
         $statement->execute(array(
             ':usuarioA' => $usuario,
             ':claveN' => $claveN
