@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>Principal Alumno</title>
@@ -25,7 +26,7 @@
             <div class="menu">
                 <a href="datos-alumno.php"><li class="module-Dalumnos">Datos del Alumno</li></a>
                 <a href="convocatorias.php"><li class="module-convocatorias">Covocatorias</li></a>
-                <a href="cerrar.php"><li class="module-convocatorias">Cerrar sesion</li></a>
+                <a href="cerrar.php"><li class="module-convocatorias">Cerrar Sesión</li></a>
             </div>
         </div>
 
@@ -35,7 +36,7 @@
         
         <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post" class="form">
             <div class="welcome-form"><h1>Bienvenido a </h1><h2>Becas ITS</h2></div>
-            <div class="welcome-form"><h1>Ha iniciado sesion como </h1><h2>Alumno</h2></div>
+            <div class="welcome-form"><h1>Ha iniciado sesión como </h1><h2>Alumno</h2></div>
         </form>
 
     </div>

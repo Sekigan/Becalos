@@ -11,6 +11,8 @@ class Convocatorias
     public  $convocatoriaPDF;
     public $archivosNecesarios;
     public $requisitos;
+    public $ubicaciontmp;
+    public $nombre;
 
     public function __CONSTRUCT()
     {
@@ -97,7 +99,7 @@ class Convocatorias
 
             $this->pdo->prepare($sql);
 
-
+            $this->guardarPDF($data->nombreConvocatoria, $data->ubicaciontmp);
 
             $this->pdo->prepare($sql)->execute(
                 array(
@@ -111,6 +113,25 @@ class Convocatorias
         } catch (EXCEPTION $e) {
             if ($e) {
                 $_SESSION['errMsg'] = 1;
+            }
+        }
+    }
+    public function guardarPDF($nombre, $ubicaciontmp)
+    {
+        if (!file_exists('archivosConvo')) {
+            mkdir('archivosConvo', 0777, true);
+            if (file_exists('archivosConvo')) {
+                if (move_uploaded_file($ubicaciontmp, 'archivosConvo/' . $nombre . '.pdf')) {
+                    echo "archivo guardado";
+                } else {
+                    echo "archivo no guardado";
+                }
+            }
+        } else {
+            if (move_uploaded_file($ubicaciontmp, 'archivosConvo/' . $nombre . '.pdf')) {
+                echo "archivo guardado";
+            } else {
+                echo "archivo no guardado";
             }
         }
     }

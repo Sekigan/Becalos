@@ -17,28 +17,37 @@
     <!-- iconos -->
     <link rel="stylesheet" href="icon/style.css">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="tabla2.css">
    
 </head>
 
+<body> 
 
+    <div class="container">
         <div class="header">
             <div class="logo-title1">
                 <img src="image/logo_magtimus.png">
                 <h2>Registro de aspirante</h2>
             </div>
             <div class="menu">
-                <a href="convocatorias.php"><li class="module-convocatorias">Atras</li></a>
-                <a href="solicitar-asesoria.php"><li class="module-Dalumnos">Solicitar Asesoria</li></a>
-                <a href="cerrar.php"><li class="module-convocatorias">Cerrar sesion</li></a>
+                <a href="convocatorias.php"><li class="module-convocatorias">Atrás</li></a> 
+                <a href="solicitar-asesoria.php"><li class="module-Dalumnos">Solicitar Asesoría</li></a>
+                <a href="cerrar.php"><li class="module-convocatorias">Cerrar Sesión</li></a>
             </div>
         </div>
 
+    </div>
+        
+                
+
     
-<body>
+
    
     
     
    
-</body>
+    </body> 
+    
+
    
-</html>
+    </html>

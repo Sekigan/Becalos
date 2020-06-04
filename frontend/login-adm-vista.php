@@ -17,7 +17,7 @@
         <div class="header">
             <div class="logo-title">
                 <img src="image/logo_magtimus.png" >
-                <h2>Iniciar Sesion Administrador</h2>
+                <h2>Iniciar Sesión Administrador</h2>
             </div>
             <div class="menu">
                 <a href="login-adm.php"><li class="module-login active">Login</li></a>
@@ -29,7 +29,7 @@
             <div class="welcome-form"><h1>Bienvenido a </h1><h2>Becas ITS</h2></div>
             <div class="user line-input">
                 <label class="lnr lnr-user"></label>
-                <input type="text" placeholder="Numero de control" name="usuarioA">
+                <input type="text" placeholder="Número de control" name="usuarioA">
             </div>
             <div class="password line-input">
                 <label class="lnr lnr-lock"></label>

@@ -51,15 +51,15 @@ $conex = mysqli_connect('localhost', 'root', '','becas');
                 <h2>Datos del Alumno</h2>
             </div>
             <div class="menu">
-                <a href="principal.php"><li class="module-Atras">Atras</li></a>
+                <a href="principal.php"><li class="module-Atras">Atrás</li></a>
                 <a href="convocatorias.php"><li class="module-convocatorias">Covocatorias</li></a>
-                <a href="cerrar.php"><li class="module-convocatorias">Cerrar sesion</li></a>
+                <a href="cerrar.php"><li class="module-convocatorias">Cerrar Sesión</li></a>
             </div>
         </div>
 
     </div>
 
-    <div class="container-form3">
+    <div class="container-form33">
     
         <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post" class="form1">
             

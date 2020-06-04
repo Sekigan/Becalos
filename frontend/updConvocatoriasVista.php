@@ -31,20 +31,20 @@
 
         <div class="menu">
             <a href="principal-adm.php">
-                <li class="module-convocatorias">Atras</li>
+                <li class="module-convocatorias">Atrás</li>
             </a>
             <a href="subir-convocatoria.php">
                 <li class="module-modificar">Subir Convocatoria</li>
             </a>
             <a href="cerrar.php">
-                <li class="module-convocatorias">Cerrar sesion</li>
+                <li class="module-convocatorias">Cerrar Sesión</li>
             </a>
         </div>
     </div>
 </div>
 
 
-<div style="width:500px; margin-top: 200px; " class="container">
+<div style="margin-top: 90px; padding-bottom: 5px; " class="container">
 
     <form id="frmConvocatorias" class="container formulario" action="?c=convocatoria&a=Guardar" method="post" enctype="multipart/form-data">
         <div class="container">
@@ -70,7 +70,7 @@
 
 
 
-                        <div class="container manutencion" style="width: 200px; height: 250px;text-align: center;">
+                        <div class="container manutencion" style="width:200px; height: 250px;text-align: center;">
 
                             <div class="column manutencion">
                                 <?php
@@ -107,13 +107,13 @@
 
 
 
-
+                <?php require_once 'header.php'; ?>
 
                 <div class="welcome-form">
 
                     <div class="text-right">
                         <a href="?c=estatus&gui=estatus"><button class="btn btn-primary" id="btnCancelar">Cancelar<label class="lnr lnr-chevron-right"></label></button>
-                            <button class="btn btn-primary" id="btnGuardar">Guardar <label class="lnr lnr-chevron-right"></label></button>
+                        <button class="btn btn-primary" id="btnGuardar">Guardar <label class="lnr lnr-chevron-right"></label></button>
                     </div>
                 </div>
 

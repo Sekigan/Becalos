@@ -27,20 +27,20 @@
 
         <div class="menu">
             <a href="principal-adm.php">
-                <li class="module-convocatorias">Atras</li>
+                <li class="module-convocatorias">Atrás</li>
             </a>
             <a href="subir-convocatoria.php">
                 <li class="module-modificar">Subir Convocatoria</li>
             </a>
             <a href="cerrar.php">
-                <li class="module-convocatorias">Cerrar sesion</li>
+                <li class="module-convocatorias">Cerrar Sesión</li>
             </a>
         </div>
     </div>
 </div>
 
 <?php require_once 'repo.php'; ?>
-
+<?php require_once 'header.php'; ?>
 
 <div class="container-form4">
     <table class="table  table-striped  table-hover" id="tabla" border="0">
@@ -58,12 +58,12 @@
                     <td><?php echo $r->nombreConvocatoria; ?></td>
                     <td></td>
                     <td>
-                        <a class="btn btn-warning" href="?c=convocatoria&a=Crud&gui=convocatoria&id=<?php echo $r->idConvocatoria; ?>">Editar</a>
+                        <a class="btn btn-warning"  href="?c=convocatoria&a=Crud&gui=convocatoria&id=<?php echo $r->idConvocatoria; ?>">Editar</a>
                     </td>
                     <td>
 
 
-                        <a class="btn btn-danger" onclick="javascript:return confirm('¿Seguro de eliminar el registro <?php echo $r->nombreConvocatoria . ' ' . $r->idConvocatoria; ?>?');" href="?c=convocatoria&a=Eliminar&id=<?php echo $r->idConvocatoria; ?>">Eliminar</a>
+                        <a class="btn btn-danger"  onclick="javascript:return confirm('¿Seguro de eliminar la convocatoria <?php echo $r->nombreConvocatoria . ' ' ; ?>?');" href="?c=convocatoria&a=Eliminar&id=<?php echo $r->idConvocatoria; ?>">Eliminar</a>
 
                     </td>
                 </tr>

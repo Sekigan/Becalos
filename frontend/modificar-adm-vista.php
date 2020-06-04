@@ -21,7 +21,7 @@
             </div>
             <div class="menu">
                 <a href="login-adm.php"><li class="module-login">Login</li></a>
-                <a href="modificar-adm.php"><li class="module-modificar">Modificar Contraseña</li></a>
+                <a href="modificar-adm.php"><li class="module-modificar active">Modificar Contraseña</li></a>
             </div>
         </div>
         
@@ -30,7 +30,7 @@
 
             <div class="user line-input">
                 <label class="lnr lnr-user"></label>
-                <input type="text" placeholder="Numero de control" name="usuarioA">
+                <input type="text" placeholder="Número de control" name="usuarioA">
             </div>
             <div class="password line-input">
                 <label class="lnr lnr-lock"></label>

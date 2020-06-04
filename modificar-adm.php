@@ -45,10 +45,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
 
 
     /*para verificar contrasena */
-
-    $statementC = $conexion->prepare('SELECT * FROM administradores WHERE contrasena = :clave ');
+    if($resultado == true){
+    $statementC = $conexion->prepare('SELECT * FROM administradores WHERE contrasena = :clave and numeroControlA =:usuarioA');
     $statementC->execute(array(
-        ':clave' => $clave
+        ':clave' => $clave,
+        ':usuarioA' => $usuario
     
     ));
     $resultadoC = $statementC->fetch();
@@ -57,7 +58,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
     
     $error .= '<i> Contraseña equivocada </i>';
 }
-
+}
 /* */
 
         if ($claveN != $claveN2){
@@ -66,6 +67,26 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST'){
         
         if ($clave == $claveN){
             $error .= '<i> Introdusca una contraseña diferente a la actual </i>';
+        }
+        
+        if (strlen($claveN) < 8){
+            $error .= '<i> La contraseña debe tener al menos 8 caracteres                        </i>';
+         }
+
+        if (strlen($claveN) > 20){
+            $error .= '<i> La contraseña no puede tener más de 20 caracteres                        </i>';
+        }
+
+        if (!preg_match('`[a-z]`',$claveN)){
+            $error .= '<i> La contraseña debe tener al menos una letra minúscula                        </i>';
+        }
+        
+        if (!preg_match('`[A-Z]`',$claveN)){
+            $error .= '<i> La contraseña debe tener al menos una letra mayúscula                        </i>';
+        }
+        
+        if (!preg_match('`[0-9]`',$claveN)){
+            $error .= '<i> La contraseña debe tener al menos un caracter numérico                        </i>';
         }
     }
 

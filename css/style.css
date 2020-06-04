@@ -5,11 +5,7 @@
     font-family: 'Raleway';
     text-decoration: none;
 }
-.gray-boxes {
-    justify-content: flex-start;
-    align-items: flex-start;
-    padding: 10px;
-  }
+
   .btn {
         border: 2px solid gray;
         background-color: #ffffff;
@@ -27,7 +23,8 @@ body{
     flex-direction: column;
     background-color: white;
     margin-top: 10px;
-    border-radius: 25px;
+    padding-bottom: 10px;
+    overflow: hidden;
 }
 
 .container-form{
@@ -66,6 +63,18 @@ body{
     overflow: hidden;
 }
 
+.container-form33{
+  width: 100%;
+  max-width: 500px;
+  background: #fff;
+  position: absolute;
+  top: 100px;
+  left: 432px;
+  
+  padding-bottom: 20px;
+  overflow: hidden;
+}
+
 .container-form4{
     width: 100%;
     max-width: 800px;
@@ -77,6 +86,44 @@ body{
     padding-bottom: 10px;
     overflow: hidden;
 }
+
+.container-form5{
+  width: 100%;
+  max-width: 700px;
+  background: #fff;
+  position: absolute;
+  top: 61%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding-bottom: 10px;
+  overflow: hidden;
+}
+
+.container-form6{
+  width: 100%;
+  max-width: 700px;
+  background: #fff;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding-bottom: 10px;
+  overflow: hidden;
+}
+
+.container-form7{
+  width: 100%;
+  max-width: 700px;
+  background: #fff;
+  position: absolute;
+  top: 57%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding-bottom: 10px;
+  overflow: hidden;
+  
+}
+
 .header{
     width: 100%;
     height: 80px;
@@ -84,6 +131,15 @@ body{
     background: #282638;
     display: flex;
     position: relative;
+}
+.header2{
+  width: 100%;
+  height: 80px;
+  
+  background: none;
+  display: flex;
+  position: relative;
+  
 }
 
 .logo-title{
@@ -130,11 +186,26 @@ body{
     color: white;
 }
 
+.menu2{
+  display: flex;
+  position: absolute;
+  right: 10px;
+  top: 0px;
+  color: white;
+}
+
 .menu li{
     list-style: none;
     padding: 30px;
     padding-bottom: 27px;
     font-weight: 300;
+}
+
+.menu2 li{
+  list-style: none;
+  padding: 30px;
+  padding-bottom: 27px;
+  font-weight: 300;
 }
 
 .line-li{
@@ -145,6 +216,7 @@ body{
     border-bottom: 4px solid #fff;
     cursor: pointer;
 }
+
 
 a{
     color: white;
@@ -161,6 +233,14 @@ a{
     width: 100%;
 }
 
+.form2{
+  width: 100%;
+}
+
+.form3{
+  width: 100%;
+}
+
 .form .welcome-form{
     display: flex;
     justify-content: center;
@@ -172,6 +252,43 @@ a{
     font-size: 30px;
     color: #898989;
 }
+
+.form2 .welcome-form{
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+}
+
+.form3 .welcome-form{
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+}
+
+.form2 .welcome-form h1{
+  font-weight: 300;
+  font-size: 30px;
+  color: #898989;
+}
+
+.form3 .welcome-form h1{
+  font-weight: 300;
+  font-size: 30px;
+  color: #898989;
+}
+
+.form2 .welcome-form h3{
+  font-weight: 300;
+  font-size: 20px;
+  color: #898989;
+}
+
+.form3 .welcome-form h3{
+  font-weight: 300;
+  font-size: 20px;
+  color: #898989;
+}
+
 .body {
     display: flex;
     flex-direction: column;
@@ -204,12 +321,28 @@ a{
     border-radius: 25px;
 }
 
-.textArea {
+textArea {
     
-    text-align: start;
-    height: 100px;
+    box-sizing: border-box;
+    height: 130px;
     width: 170px;
     font: 16px;
+    min-height: 130px;
+    max-height: 140px;
+    max-width: 170px;
+    min-width: 170px;
+}
+
+.form2 textArea {
+    
+    box-sizing: border-box;
+    height: 130px;
+    width: 100%;
+    font: 16px;
+    min-height: 100px;
+    max-height: 140px;
+    max-width: 100%;
+    min-width: 100%;
 }
 
 .manutencion * {
@@ -235,6 +368,22 @@ a{
     color: #5584FF;
 }
 
+.form2 .welcome-form h2{
+  font-size: 34px;
+  margin-left: 10px;
+  margin-top: -4px;
+  font-weight: bold;
+  color: #5584FF;
+}
+
+.form3 .welcome-form h2{
+  font-size: 34px;
+  margin-left: 10px;
+  margin-top: -4px;
+  font-weight: bold;
+  color: #5584FF;
+}
+
 .line-input{
     max-width: 350px;
     display: flex;
@@ -254,7 +403,15 @@ a{
     padding: 6px;
     position: relative;
 }
-
+.form2 ::placeholder{
+    max-width: 450px;
+    display: flex;
+    border-bottom: 1px solid #efefef;
+    margin: auto;
+    margin-top: 25px;
+    padding: 6px;
+    position: relative;
+}
 .border-input{
     border-bottom: 1px solid #5584FF;
 }
@@ -348,9 +505,46 @@ a{
     cursor: pointer;
 }
 
+.form2 button{
+  width: 200px;
+  height: 40px;
+  display: block;
+  margin: auto;
+  color: white;
+  background: #5584FF;
+  border-style: none;
+  outline: 0px;
+  border-radius: 50px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.form3 button{
+  width: 200px;
+  height: 40px;
+  display: block;
+  margin: auto;
+  color: white;
+  background: #5584FF;
+  border-style: none;
+  outline: 0px;
+  border-radius: 50px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+}
 
 .form1 button:hover{
     opacity: .9;
+}
+
+.form2 button:hover{
+  opacity: .9;
+}
+
+.form3 button:hover{
+  opacity: .9;
 }
 
 .form1 button label{
@@ -360,6 +554,19 @@ a{
     cursor: pointer;
 }
 
+.form2 button label{
+  position: relative;
+  left: 50px;
+  font-size: 10px;
+  cursor: pointer;
+}
+
+.form3 button label{
+  position: relative;
+  left: 30px;
+  font-size: 10px;
+  cursor: pointer;
+}
 
 .mensaje{
     width: 100%;

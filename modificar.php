@@ -42,10 +42,11 @@
         }
 
         /*para verificar contrasena */
-
-        $statementC = $conexion->prepare('SELECT * FROM alumnos WHERE contrasena = :clave ');
+       if($resultado == true){
+        $statementC = $conexion->prepare('SELECT * FROM alumnos WHERE contrasena = :clave and numeroControl =:usuario ');
             $statementC->execute(array(
-                ':clave' => $clave
+                ':clave' => $clave,
+                ':usuario' => $usuario
             
             ));
             $resultadoC = $statementC->fetch();
@@ -54,7 +55,7 @@
             
             $error .= '<i> Contraseña equivocada </i>';
         }
-
+        }
         /* */
         
             if ($claveN != $claveN2){
@@ -63,6 +64,26 @@
             
             if ($clave == $claveN){
                 $error .= '<i> Introdusca una contraseña diferente a la actual                        </i>';
+            }
+
+            if (strlen($claveN) < 8){
+                $error .= '<i> La contraseña debe tener al menos 8 caracteres                        </i>';
+             }
+
+            if (strlen($claveN) > 20){
+                $error .= '<i> La contraseña no puede tener más de 20 caracteres                        </i>';
+            }
+
+            if (!preg_match('`[a-z]`',$claveN)){
+                $error .= '<i> La contraseña debe tener al menos una letra minúscula                        </i>';
+            }
+            
+            if (!preg_match('`[A-Z]`',$claveN)){
+                $error .= '<i> La contraseña debe tener al menos una letra mayúscula                        </i>';
+            }
+            
+            if (!preg_match('`[0-9]`',$claveN)){
+                $error .= '<i> La contraseña debe tener al menos un caracter numérico                        </i>';
             }
         }
 

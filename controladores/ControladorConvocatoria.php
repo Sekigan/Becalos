@@ -40,13 +40,16 @@ class ControladorConvocatoria
             $entidadConvocatoria->nombreConvocatoria = $_REQUEST['txtNombre'];
             $entidadConvocatoria->requisitos = $_REQUEST["txtRequisitos"];
             $entidadConvocatoria->archivosNecesarios = $_REQUEST["txtArchivosN"];
-            $entidadConvocatoria->convocatoriaPDF = base64_encode(file_get_contents($_FILES["pdf"]["tmp_name"]));
-
+            // $entidadConvocatoria->convocatoriaPDF = base64_encode(file_get_contents($_FILES["pdf"]["tmp_name"]));
+            $nombre = $_FILES['pdf']['name'];
+            $ubicaciontmp = $_FILES['pdf']['tmp_name'];
             if ($entidadConvocatoria->idConvocatoria > 0) {
                   $this->modelo->Actualizar($entidadConvocatoria);
+                  $this->modelo->guardarPDF($nombre, $ubicaciontmp);
                   header('Location: ./controlador.php?gui=convocatoria');
             } else {
                   $this->modelo->Registrar($entidadConvocatoria);
+                  $this->modelo->guardarPDF($nombre, $ubicaciontmp);
                   if ($_SESSION['errMsg'] == 0) {
                         $this->Crud();
                   } else {

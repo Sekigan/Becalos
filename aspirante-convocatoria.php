@@ -1,8 +1,15 @@
 <?php
+session_start();
+
+if (isset($_SESSION['usuario'])) {
+} else {
+    header('location: login.php');
+}
+
 require_once 'conexion.php';
 
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     require_once 'frontend/aspirante-convocatoria-vista.php';
 
@@ -21,25 +28,37 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $numeroControlA = $row['numeroControlA'];
         $nombreConvoca = $row["nombreConvocatoria"];
         $requisitos = $row['requisitosDescripcion'];
-        $pdf = $row['convocatoriaPDF'];
+
         $archivosNece = $row['archivosNecesariosDesc'];
     }
 
-    $pdffile = base64_decode($pdf);
-    echo '<body class="body container">';
-    echo "<form class='container formulario' style='display: flex; flex-direction: column; background-color: white; margin-top: 20px;>";
-    echo "<div class='convocatorias' >";
-    echo '<h1 style="color:#5584FF; margin-top: 20px;">';
+    echo '<form class="form2" action="registroaspirante.php" method="post" enctype="multipart/form-data">';
+
+    echo ' <input type="hidden" name="usuario" id="usuario" value="';
+    echo  $_SESSION['usuario'];
+    echo '" />';
+    echo ' <input type="hidden" name="idConvocatoria" id="idConvocatoria" value="';
+    echo $idConvoca;
+    echo '" />';
+
+    echo '<div class="container-form6" style="top: 59%;">
+                
+                    
+                    <div class="welcome-form">
+                        <h2>';
     echo $nombreConvoca;
-    echo '</h1>';
-    echo '</div>';
-
-
-    echo '         <div class="container manutencion">';
-    echo '<div class="container">';
-    echo '<div class="div requisitos">';
-    echo '<div class="container column gray-boxes" style="width: 200px; height: 200px; margin-bottom: 50px;">';
-    echo '<span style="width: 100%;">Requisitos:</span>';
+    echo '
+                        </h2>
+                    </div>
+                    <table >
+                            
+                        <tbody>
+                        
+                            <tr> 
+                                <td>';
+    echo '<div class="container column gray-boxes" style="box-sizing: border-box;height: 150px;
+                                width: 200px;font: 16px;min-height: 150px;max-height: 150px;max-width: 205px;min-width: 205px;">';
+    echo '<div style="color: #898989; font-weight: 100;font-size: 12px;" ><h1 >Requisitos</h1></div>';
     echo '<ul>';
 
 
@@ -48,63 +67,61 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     echo '</ul>';
     echo '               </div>';
-    echo '</div>';
-    echo '<div class="container manutencion" style="width: 200px; height: 250px;text-align: center;">';
 
-    echo '<div class="column manutencion">';
-    echo '<a href=';
-    $pdffile;
-    echo '>';
-    echo '<small class="lnr lnr-download btn ">Descargar pdf</small></a>';
-    echo '</div>
-</div>';
-    echo ' <div class="container necesarios gray-boxes" style="width: 200px; height: 200px;  margin-bottom: 50px;">
-<span>Archivos necesarios:</span>
-<ul>';
+    echo '</td>
+                                
+                                <td><a href=' . "archivosConvo/" . $nombreConvoca . ".pdf" . '><small class="lnr lnr-download btn ">Descargar pdf</small></a>
+                                </td>
+                                
+
+                                <td>';
+    echo '<div class="container column gray-boxes" style="box-sizing: border-box;height: 150px;
+                                width: 210px;font: 16px;min-height: 150px;max-height: 150px;max-width: 230px;min-width: 230px;">';
+    echo '<div style="color: #898989; font-weight: 100;font-size: 12px;" ><h1 >Archivos necesarios</h1></div>';
+    echo '<ul>';
+
+
+
     echo $archivosNece;
-    echo '                         </ul>
-                   
-</div>
 
+    echo '</ul>';
+    echo '               </div>';
 
-</div>
-
-</div>
-
-
-</form >
-<div class="div container">
-';
+    echo '</td>
+                                
+                            </tr>
+                            
+                        </tbody>
+                    </table>
+            
+                </form >';
     echo '
-<div class="container " style="margin-top: 15px;">
+                        <div class="container " style="margin-top: 15px;">
 
-</div>
-';
-    echo '<div class="container">
+                            ';
+    echo '<div class="container" ">
 
-<form action="/upload-target" class="dropzone" style="width: 600px; height: 200px; margin: 10px;">
-</form>
+                                <form action="/upload-target" class="dropzone" style="width: 600px; height: 200px; margin: 10px;">
+                                </form>
+                            </div>
+                        </div>
+                        <div class="welcome-form">
+                            <h2><a href="solicitar-asesoria.php"><button  id="solicitar" name="solicitar" value="';
+    echo $id;
+    echo  '">Solicitar Asesoría<label class="lnr lnr-chevron-right" style= "left: 25px;"></label></button> </h2>
+                            <h2></h2><h2></h2><h2></h2><h2></h2>
+                            <h2><button class="btn btn-primary" id="btnGuardar">Guardar<label class="lnr lnr-chevron-right"></label></button> </h2>
+                            <h2></h2>
+                        </div> 
+                        
+        
+                
+        </form>
+                
+            </div>
+        
 
-
-</form>
-
-<div class="container" style="width: 100%; justify-items: flex;  margin-top: 10px;">
-    <button>Atras</button>
-    <a href="aspirante-convocatoria.php">
-    <button method:"guardar" style="margin-left: 10px;">Guardar</button>
-    </a>
-</div>
-
-</div>
-</div>
-
-
-
-<script src="js/jquery.js"></script>
-<script src="js/script.js"></script>
-
-';
-    
+            <script src="js/jquery.js"></script>
+            <script src="js/script.js"></script>';
 }
-
-
+echo var_dump($_SESSION);

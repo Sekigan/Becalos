@@ -20,7 +20,7 @@
     <!-- iconos -->
     <link rel="stylesheet" href="icon/style.css">
     <link rel="stylesheet" href="css/style.css">
-
+    
 </head>
 
 
@@ -32,13 +32,13 @@
     </div>
     <div class="menu">
         <a href="principal-adm.php">
-            <li class="module-convocatorias">Atras</li>
+            <li class="module-convocatorias">Atrás</li>
         </a>
         <a href="./controlador.php?gui=convocatoria">
             <li class="module-modificar">Gestionar Convocatoria</li>
         </a>
         <a href="cerrar.php">
-            <li class="module-convocatorias">Cerrar sesion</li>
+            <li class="module-convocatorias">Cerrar Sesión</li>
         </a>
     </div>
 </div>
@@ -55,9 +55,9 @@
             <div class="container">
                 <div class="div requisitos">
                     <div class="container column gray-boxes" style="width: 200px; height: 200px; margin-bottom: 50px;">
-                        <span style="width: 100%;">Requisitos:</span>
+                    <span style="width: 100%;font-weight: 300;font-size: 20px;color: #898989;font-weight: bold;"> Requisitos:</span>
                         <ul>
-                            <textarea name="requisitos" id="requisitos" class="textArea">
+                            <textarea name="requisitos" id="requisitos" class="textArea" >
 
                             </textarea>
                         </ul>
@@ -65,7 +65,7 @@
                 </div>
 
 
-                <div class="container manutencion" style="width: 200px; height: 250px;text-align: center;">
+                <div class="container manutencion" style="width: 200px; height: 250px;text-align: center;font-size: 34px;margin-left: 10px;margin-top: -4px;font-weight: bold;color: #5584FF;">
 
                     <div class="column manutencion">
                         <input type="text" name="nombreConvo" id="nombreConvo" class="nombreConvo" placeholder="Convocatoria">
@@ -73,7 +73,7 @@
 
                 </div>
 
-                <div class="container  gray-boxes" style="width: 200px; height: 200px;  margin-bottom: 50px;">
+                <div class="container  gray-boxes" style="width: 200px; height: 200px;  margin-bottom: 50px;font-weight: 300;font-size: 20px;color: #898989;font-weight: bold;">
                     <span>Archivos necesarios:</span>
                     <ul>
 
@@ -90,10 +90,10 @@
 
 
 
-        <input type="file" name="pdf" id="pdf" enctype="multipart/form-data" style="width: 600px; height: 200px; margin: 10px; border-radius: 25px; color: #282638;">
+        <input type="file" name="pdf" id="pdf" enctype="multipart/form-data" style="width: 600px; height: 200px; margin: 10px; border-radius: 0px; color: #282638;">
         <div class="container" style="width: 100%; justify-items: flex;  margin-top: 10px;">
-            <button action="index-adm.php">Atras</button>
-            <a href="subir-convocatroa.php">
+            <button action="index-adm.php">Atrás</button>
+            <a href="subir-convocatria.php">
                 <button style="margin-left: 10px;">Guardar</button>
 </form> </a>
 <?php if (!empty($error)) : ?>
